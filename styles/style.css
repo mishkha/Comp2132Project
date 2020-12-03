@@ -1,3 +1,6 @@
+/*
+SASS Variables
+*/
 /* 
 box properties 
 */
@@ -22,6 +25,13 @@ hmtl elements
 /*
 class selectors 
 */
+.wrapper {
+  background-color: #F5DDDD;
+  min-width: 1000px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
 /*
 id selectors 
 */

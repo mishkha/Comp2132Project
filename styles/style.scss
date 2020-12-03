@@ -1,3 +1,12 @@
+
+/*
+SASS Variables
+*/
+$main_color: #F5DDDD;
+$secondary_color: #C2B2B4;
+$text_color: #083D77;
+
+
 /* 
 box properties 
 */
@@ -9,11 +18,11 @@ html {
     box-sizing: inherit;
   }
 
-  body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      position: relative;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
   }
 
 /* 
@@ -22,9 +31,17 @@ hmtl elements
 
 
 
+
 /*
 class selectors 
 */
+
+.wrapper {
+  background-color: $main_color;
+  min-width: 1000px;
+  max-width: 1800px;
+  margin: 0 auto;
+}
 
 
 

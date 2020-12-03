@@ -1,1 +1,1 @@
-html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}body{font-family:Arial, Helvetica, sans-serif;margin:0;min-height:100vh;position:relative}
+html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}body{font-family:Arial, Helvetica, sans-serif;margin:0;min-height:100vh;position:relative}.wrapper{background-color:#F5DDDD;min-width:1000px;max-width:1800px;margin:0 auto}
