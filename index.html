@@ -4,35 +4,55 @@
 <!--author:Michael Yoo-->
 
     <head>
-        <title></title>
+        <title>COMP 2132 - Dice Game Project</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
         <link href="styles/style.css" rel="stylesheet">
-
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+        
     </head>
 
 <body>   
     <div class="wrapper"> <!--wrapper div-->
-            <header>
-
-            </header>
+        <h2 class="box header">Comp 2132 - Dice Game</h2>
+            
+            <main>
+            <section id="pop-up">
+                    <h3>Welcome!</h3>
+                    <button id="close-me">X</button>
+                    <p>Read over the rules before starting the game</p>
+                    <p>To start playing the game, close me!</p>
+            </section>
+            <div class="box rules">
+                    <h3>How to Play:</h3>
+                        <h4>You vs AI</h4>
+                        <ul>
+                            <li>Click button to roll dice</li>
+                            <li>Points are given for the sum of the two dice</li>
+                            <li>If a <strong>"1"</strong> is rolled, points are void for the roll</li>
+                            <li>If <strong>both dice are the same value</strong>, the sum is multiplied by 2</li>
+                            <li>Any other combination is just summed up</li>
+                            <li>Game consists of 3 rounds (rolls of dice)</li>
+                            <li>At the end of 3 rounds, the winner is determined by the total of 3 rounds</li>
+                            <li>Enjoy!</li>
+                        </ul>
+                </div>
+            <div class="content"><!--content div-->
                 
-            <nav>
-                <ul>
-                    <li>
-                        
-                    </li>
-                </ul>
-            </nav>
-            
-        <main>
-            
-        
-        </main>
-        <footer>
+                <div class="box box1"></div>
+                <div class="box box2"></div>
+                <div class="box text"></div>
+            </main>
+            </div> <!--content div-->
+    
+        <footer class="footer">
 
         </footer>
     </div> <!--wrapper div-->
-</body>
+    
+    <script src="scripts/script.js"></script>
+    
+    </body>
 </html>
