@@ -27,9 +27,12 @@ mixins
 html elements
 */
 img {
+  width: 100px;
+  height: 100px;
   padding: 5px;
   background-color: #A288A6;
   border: 1px solid #90e0ef;
+  border-radius: 15px;
 }
 
 /*
@@ -48,7 +51,7 @@ class selectors
   grid-auto-columns: 1fr;
   grid-template-rows: minmax(150px, auto);
   grid-gap: 5px;
-  grid-template-areas: "header" "rules" "content";
+  grid-template-areas: "header" "rules" "content" "footer";
 }
 
 .box {
@@ -70,7 +73,7 @@ class selectors
   grid-template-rows: minmax(200px, auto);
   grid-gap: 2px;
   grid-area: content;
-  grid-template-areas: "box1 box2" "box1 box2" "text text" "text text" "footer footer";
+  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "text text" "text text";
 }
 
 .rules {

@@ -32,6 +32,25 @@ closeMe.addEventListener("click", function(){
 });
 
 
+//roll dice button
+
+const rollDice = document.getElementById('dice-roll')
+
+rollDice.addEventListener('click', throwDice);
+
+function throwDice(){
+    let dice1 = Math.floor(Math.random()*5)+1;
+    let dice2 = Math.floor(Math.random()*5)+1;
+    let dice3 = Math.floor(Math.random()*5)+1;
+    let dice4 = Math.floor(Math.random()*5)+1;
+    //dice images
+    document.getElementById('user-dice1').src = `images/dice-${dice1}.png`;
+    document.getElementById('user-dice2').src = `images/dice-${dice2}.png`;
+    document.getElementById('ai-dice1').src = `images/dice-${dice3}.png`;
+    document.getElementById('ai-dice2').src = `images/dice-${dice4}.png`;
+}
+
+
 
 //1 rolled, score is 0
 

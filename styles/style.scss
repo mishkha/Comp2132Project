@@ -31,10 +31,11 @@ body {
 mixins
 */
 
-@mixin dice-background($padding, $background-color, $border-color) {
+@mixin dice-background($padding, $background-color, $border-color, $border-radius) {
   padding: $padding;
   background-color: $background-color;
   border:1px solid $border-color;
+  border-radius: $border-radius;
 }
 
 @mixin pop-up-border($border-radius, $border-color){
@@ -48,7 +49,9 @@ html elements
 */
 
 img {
-  @include dice-background(5px, $tertiary_color, #90e0ef)
+  width: 100px;
+  height: 100px;
+  @include dice-background(5px, $tertiary_color, #90e0ef, 15px)
 }
 
 /*
@@ -71,7 +74,8 @@ class selectors
   grid-template-areas: 
   "header"
   "rules"
-  "content";
+  "content"
+  "footer";
 }
 
 .box {
@@ -96,9 +100,9 @@ class selectors
   grid-template-areas: 
   "box1 box2"
   "box1 box2"
+  "roll roll"
   "text text"
-  "text text"
-  "footer footer";
+  "text text";
 }
 
 .rules {
