@@ -73,7 +73,7 @@ class selectors
   grid-template-rows: minmax(200px, auto);
   grid-gap: 2px;
   grid-area: content;
-  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "text text" "text text";
+  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "textbox textbox" "textbox textbox";
 }
 
 .rules {
@@ -91,8 +91,13 @@ class selectors
   grid-area: box2;
 }
 
-.text {
-  grid-area: text;
+.roll {
+  grid-area: roll;
+  align-items: center;
+}
+
+.textbox {
+  grid-area: textbox;
 }
 
 .footer {
@@ -130,6 +135,10 @@ id selectors
   pointer-events: all;
   border: 1px solid #b5838d;
   border-radius: 0px;
+}
+
+#dice-roll {
+  justify-content: center;
 }
 
 /*

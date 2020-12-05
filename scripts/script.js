@@ -4,14 +4,10 @@ author: Michael Yoo
 student id: A00794219
 */
 
-/* 
-Pop-up delay 
-*/
+//welcome popup
 
 const delay = 2000;
-
 const popup = document.getElementById("pop-up");
-
 
 let diceGameStart = true;
 
@@ -31,12 +27,45 @@ closeMe.addEventListener("click", function(){
     popup.style.opacity = "0";
 });
 
+//text output
+const textbox = document.getElementsByClassName('text')
+
+
+//dice class
+class Dice{
+    constructor(face, value){
+        this.face = face;
+        this.value = value;
+    }
+    rolledDice(){
+    return `${this.face} roll has a score of ${this.value}`;
+    }
+}
+
+
+//roll class
+
+class Roll{
+    constructor(){
+        this.face = ["../images/dice-1.png", "../images/dice-2.png", "../images/dice-3.png", "../images/dice-4.png", "../images/dice-5.png", "../images/dice-6.png"];
+        this.value = [1,2,3,4,5,6];
+        this.roll = [];
+
+        for(let i = 0; i < this.face.length; i++){
+            let newRoll = new Dice(this.face[i], this.value[i])
+            this.roll.push(newRoll);
+        }
+    }
+}
+
+
+
 
 //roll dice button
 
 const rollDice = document.getElementById('dice-roll')
 
-rollDice.addEventListener('click', throwDice);
+rollDice.addEventListener('click', throwDice)
 
 function throwDice(){
     let dice1 = Math.floor(Math.random()*5)+1;
