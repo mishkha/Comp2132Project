@@ -73,7 +73,7 @@ class selectors
   grid-template-rows: minmax(200px, auto);
   grid-gap: 2px;
   grid-area: content;
-  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "textbox textbox" "textbox textbox";
+  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "userscore aiscore" "usertotal aitotal";
 }
 
 .rules {
@@ -96,12 +96,29 @@ class selectors
   align-items: center;
 }
 
-.textbox {
-  grid-area: textbox;
+.user-score {
+  grid-area: userscore;
+}
+
+.ai-score {
+  grid-area: aiscore;
+}
+
+.usertotal {
+  grid-area: usertotal;
+  text-align: center;
+}
+
+.aitotal {
+  grid-area: aitotal;
+  text-align: center;
 }
 
 .footer {
   grid-area: footer;
+  background-color: #F5DDDD;
+  color: #083D77;
+  text-align: center;
 }
 
 /*
@@ -135,10 +152,6 @@ id selectors
   pointer-events: all;
   border: 1px solid #b5838d;
   border-radius: 0px;
-}
-
-#dice-roll {
-  justify-content: center;
 }
 
 /*

@@ -101,8 +101,9 @@ class selectors
   "box1 box2"
   "box1 box2"
   "roll roll"
-  "textbox textbox"
-  "textbox textbox";
+  "userscore aiscore"
+  "usertotal aitotal"
+  ;
 }
 
 .rules {
@@ -125,13 +126,32 @@ grid-area: box2;
   align-items: center;
 }
 
-.textbox {
-grid-area: textbox;
+.user-score{
+  grid-area: userscore;
 }
+
+.ai-score{
+  grid-area: aiscore;
+}
+
+.usertotal {
+grid-area: usertotal;
+text-align: center;
+}
+
+.aitotal {
+  grid-area: aitotal;
+  text-align: center;
+  }
+  
 
 .footer {
 grid-area: footer;
+background-color: $main_color;
+color: $text_color;
+text-align: center;
 }
+
 /*
 id selectors 
 */
@@ -165,9 +185,7 @@ id selectors
   @include pop-up-border(0px, #b5838d)
 }
 
-#dice-roll{
-  justify-content: center;
-}
+
 /*
 media queries
 */

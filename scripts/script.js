@@ -4,8 +4,14 @@ author: Michael Yoo
 student id: A00794219
 */
 
-//welcome popup
+//output text
+const userTotal = document.getElementById('user-total');
+const userScoreTally = document.getElementById('user-score-tally');
+const aiScoreTally = document.getElementById('ai-score-tally');
 
+
+//welcome popup
+    
 const delay = 2000;
 const popup = document.getElementById("pop-up");
 
