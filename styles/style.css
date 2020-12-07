@@ -38,6 +38,11 @@ img {
 /*
 class selectors 
 */
+.page-accordion {
+  display: flex;
+  align-items: flex-start;
+}
+
 .wrapper {
   background-color: #F5DDDD;
   max-width: 80%;
@@ -54,6 +59,13 @@ class selectors
   grid-template-areas: "header" "rules" "content" "footer";
 }
 
+.accordion .tab {
+  background-color: #C2B2B4;
+  border-top: 1px solid #083D77;
+  border-bottom: 1px solid #083D77;
+  cursor: pointer;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -65,6 +77,10 @@ class selectors
 
 .header {
   grid-area: header;
+  background-image: url("../images/background-dice.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #F5DDDD;
 }
 
 .content {
@@ -119,6 +135,35 @@ class selectors
   background-color: #F5DDDD;
   color: #083D77;
   text-align: center;
+}
+
+.angled-gradient-button {
+  background-size: 220%;
+  box-shadow: 0 0.2em 0.3em rgba(0, 0, 0, 0.15);
+  color: #083D77;
+  background-color: transparent;
+  background-position: 100%;
+  border: 3px solid #A288A6;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: all .2s ease-out;
+  font-weight: 900;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-image: linear-gradient(110deg, #0c8eda 0%, #0c8eda 50%, transparent 50%, transparent 100%);
+  font-size: 14px;
+}
+
+.angled-gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.25);
+  background-position: 0;
+  color: #fff;
+}
+
+.angled-gradient-button:active {
+  transform: translateY(-1px);
 }
 
 /*

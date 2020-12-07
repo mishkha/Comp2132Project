@@ -58,6 +58,11 @@ img {
 class selectors 
 */
 
+.page-accordion{
+  display: flex;
+  align-items: flex-start;
+}
+
 .wrapper {
   background-color: $main_color;
   max-width: 80%;
@@ -78,6 +83,13 @@ class selectors
   "footer";
 }
 
+.accordion .tab{
+  background-color: $secondary_color;
+  border-top: 1px solid $text_color;
+  border-bottom: 1px solid $text_color;;
+  cursor: pointer;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -89,6 +101,10 @@ class selectors
 
 .header {
   grid-area: header;
+  background-image: url("../images/background-dice.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #F5DDDD;
 }
 
 .content {
@@ -105,6 +121,7 @@ class selectors
   "usertotal aitotal"
   ;
 }
+
 
 .rules {
   list-style: circle inside;
@@ -151,6 +168,37 @@ background-color: $main_color;
 color: $text_color;
 text-align: center;
 }
+
+
+.angled-gradient-button {
+  background-size: 220%;
+  box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+  color: $text_color;
+  background-color: transparent;
+  background-position: 100%;
+  border: 3px solid $tertiary_color;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: all .2s ease-out;
+  font-weight: 900;
+  cursor: pointer;
+  letter-spacing: 2px;
+  background-image: linear-gradient(110deg, #0c8eda 0%, #0c8eda 50%, transparent 50%, transparent 100%);
+  font-size: 14px;
+}
+
+.angled-gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, 0.25);
+  background-position: 0;
+  color: #fff;
+}
+
+.angled-gradient-button:active {
+  transform: translateY(-1px);
+}
+
 
 /*
 id selectors 
