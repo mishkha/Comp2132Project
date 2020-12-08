@@ -71,17 +71,24 @@ let imageAlt = ["rolled: 1", "rolled: 2", "rolled: 3", "rolled: 4", "rolled: 5",
 
 rollDice.addEventListener('click', throwDice)
 
+let nClick = 0;
+let maxClick = 3;
+
 function throwDice(){
+    nClick++;
+    if(nClick == maxClick){
+        alert(`Game Over! Start a new game`);
+    }
     let dice1 = Math.floor(Math.random()*6)+1;
     let dice2 = Math.floor(Math.random()*6)+1;
     let dice3 = Math.floor(Math.random()*6)+1;
     let dice4 = Math.floor(Math.random()*6)+1;
     diceGameStart = false;
     //dice images
-    let d1 = document.getElementById('user-dice1').src = `images/dice-${dice1}.png`;
-    let d2 = document.getElementById('user-dice2').src = `images/dice-${dice2}.png`;
-    let d3 = document.getElementById('ai-dice1').src = `images/dice-${dice3}.png`;
-    let d4 = document.getElementById('ai-dice2').src = `images/dice-${dice4}.png`;
+    document.getElementById('user-dice1').src = `images/dice-${dice1}.png`;
+    document.getElementById('user-dice2').src = `images/dice-${dice2}.png`;
+    document.getElementById('ai-dice1').src = `images/dice-${dice3}.png`;
+    document.getElementById('ai-dice2').src = `images/dice-${dice4}.png`;
     //image alt
     document.getElementById('user-dice1').alt = imageAlt[dice1];
     document.getElementById('user-dice2').alt = imageAlt[dice2];
@@ -90,39 +97,28 @@ function throwDice(){
 
     //1 rolled, score is 0
     //same number, score is multiplied by 2
-    if(d1 == d2){
+    if(dice1 == dice2){
         userScoreRound.innerHTML = (dice1 + dice2)*2;
-    }else if(dice3 == dice4){
-        aiRoundScore.innerHTML = (dice3 + dice4)*2;
-    }else if( dice1 == 1 || dice2 == 1){
-        userScoreRound.innerHTML = 0;
-    }else if(dice3 == 1 || dice4 == 1){
-        aiRoundScore.innerHTML = 0
-    }else if(dice1 == 1 && dice2 == 1){
-        userScoreRound.innerHTML = 0;
-    }else if(dice3 == 1 && dice4 == 1){
-        aiRoundScore.innerHTML = 0;
     }else{
         userScoreRound.innerHTML = dice1 + dice2;
-        aiRoundScore.innerHTML = dice3 + dice4;
     }
-    totalForUser();
-    totalForAi();
+    
+    if(dice3 == dice4){
+        aiRoundScore.innerHTML = (dice3 + dice4)*2;
+        console.log(aiRoundScore);
+    }else{
+        aiRoundScore.innerHTML = dice3 + dice4;
+        console.log(aiRoundScore);
+    }
+    
+    if( dice1 == 1 || dice2 == 1){
+        userScoreRound.innerHTML = 0;
+    }
+    
+    if(dice3 == 1 || dice4 == 1){
+        aiRoundScore.innerHTML = 0;
+    }
 };
-
-
-let userTotalScore = 0;
-let aiTotalScore = 0;
-
-totalForUser = function(){
-    userTotalScore + userScoreRound;
-    userTotal.innerHTML = userTotalScore;
-}
-
-totalForAi = function(){
-    aiTotalScore + aiRoundScore;
-    aiTotal.innerHTML = aiTotalScore;
-}
 
 
 //new game button
@@ -130,6 +126,7 @@ const newGameStart = document.getElementById('new-game');
 newGameStart.addEventListener('click', newGame)
 
 function newGame(){
+    nClick = 0;
     aiTotal.innerHTML = 0;
     userTotal.innerHTML = 0;
     userScoreRound.innerHTML = 0;
@@ -148,12 +145,6 @@ $tabs.click(function(){
 });
 
 //1 rolled, score is 0
-function roundScore(dice1, dice2, dice3, dice4){
-    let userRoundScore = dice1 + dice2;
-    let aiRoundScore = dice3 + dice4;
-}
-
-
 
 
 //total score from each round(3 max)
