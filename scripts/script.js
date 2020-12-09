@@ -90,19 +90,19 @@ function throwDice(){
     userTotal.innerHTML = +userTotal.textContent + +userScoreRound.textContent;
     aiTotal.innerHTML = +aiTotal.textContent + +aiRoundScore.textContent; 
     
-    winner();
+    winner(userTotal.textContent, aiTotal.textContent);
 };
 
 //winner determined
 const message = document.getElementById('message');
 
-function winner(userTotal, aiTotal){
+function winner(userPoints, aiPoints){
     if(nClick == maxClick){
-        if(userTotal > aiTotal){
+        if(userPoints > aiPoints){
             message.innerHTML = `User is the winner!`;
-        }else if(aiTotal > userTotal){
+        }else if(aiPoints > userPoints){
             message.innerHTML = `AI is the winner!`;
-        }else if(userTotal == aiTotal){
+        }else if(userPoints == aiPoints){
             message.innerHTML = `We have a draw!`;
         }
     }
