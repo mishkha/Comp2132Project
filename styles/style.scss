@@ -239,7 +239,10 @@ id selectors
   @include pop-up-border(0px, #b5838d)
 }
 
-
+#message {
+  font-weight: bold;
+  font-size: large;
+}
 /*
 media queries
 */
