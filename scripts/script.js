@@ -119,6 +119,7 @@ function newGame(){
     userTotal.innerHTML = 0;
     userScoreRound.innerHTML = 0;
     aiRoundScore.innerHTML = 0;
+    message.innerHTML = "";
 }
 
 //jquery accordion
