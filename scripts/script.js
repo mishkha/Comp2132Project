@@ -5,10 +5,11 @@ student id: A00794219
 */
 
 //output text
-const userTotal = document.getElementById('user-total');
+
 const userScoreRound = document.getElementById('user-round');
-const aiTotal = document.getElementById('ai-total');
 const aiRoundScore = document.getElementById('ai-round');
+const userTotal = document.getElementById('user-total');
+const aiTotal = document.getElementById('ai-total');
 
 
 //welcome popup
@@ -35,37 +36,7 @@ closeMe.addEventListener("click", function(){
     popup.style.opacity = "0";
 });
 
-
-//dice class
-
-// class Dice{
-//     constructor(face, value){
-//         this.face = face;
-//         this.value = value;
-//     }
-//     rolledDice(){
-//     return `${this.face} roll has a score of ${this.value}`;
-//     }
-// }
-
-// //roll class
-
-// class Roll{
-//     constructor(){
-//         this.face = ["../images/dice-1.png", "../images/dice-2.png", "../images/dice-3.png", "../images/dice-4.png", "../images/dice-5.png", "../images/dice-6.png"];
-//         this.value = [1,2,3,4,5,6];
-//         this.roll = [];
-
-//         for(let i = 0; i < this.face.length; i++){
-//             let newRoll = new Dice(this.face[i], this.value[i])
-//             this.roll.push(newRoll);
-//         }
-//     }
-// }
-
-
-//roll dice button
-
+//roll dice function
 const rollDice = document.getElementById('dice-roll')
 let imageAlt = ["rolled: 1", "rolled: 2", "rolled: 3", "rolled: 4", "rolled: 5", "rolled: 6"];
 
@@ -79,6 +50,7 @@ function throwDice(){
     if(nClick == maxClick){
         alert(`Game Over! Start a new game`);
     }
+    //dice randomization
     let dice1 = Math.floor(Math.random()*6)+1;
     let dice2 = Math.floor(Math.random()*6)+1;
     let dice3 = Math.floor(Math.random()*6)+1;
@@ -95,30 +67,46 @@ function throwDice(){
     document.getElementById('ai-dice1').alt = imageAlt[dice3];
     document.getElementById('ai-dice2').alt = imageAlt[dice4];
 
-    //1 rolled, score is 0
     //same number, score is multiplied by 2
+    //otherwise add normally
     if(dice1 == dice2){
         userScoreRound.innerHTML = (dice1 + dice2)*2;
     }else{
         userScoreRound.innerHTML = dice1 + dice2;
     }
-    
     if(dice3 == dice4){
         aiRoundScore.innerHTML = (dice3 + dice4)*2;
-        console.log(aiRoundScore);
     }else{
         aiRoundScore.innerHTML = dice3 + dice4;
-        console.log(aiRoundScore);
     }
-    
+    //1 rolled, score is 0
     if( dice1 == 1 || dice2 == 1){
         userScoreRound.innerHTML = 0;
     }
-    
     if(dice3 == 1 || dice4 == 1){
         aiRoundScore.innerHTML = 0;
     }
+
+    userTotal.innerHTML = +userTotal.textContent + +userScoreRound.textContent;
+    aiTotal.innerHTML = +aiTotal.textContent + +aiRoundScore.textContent; 
+    
+    winner();
 };
+
+//winner determined
+const message = document.getElementById('message');
+
+function winner(userTotal, aiTotal){
+    if(nClick == maxClick){
+        if(userTotal > aiTotal){
+            message.innerHTML = `User is the winner!`;
+        }else if(aiTotal > userTotal){
+            message.innerHTML = `AI is the winner!`;
+        }else if(userTotal == aiTotal){
+            message.innerHTML = `We have a draw!`;
+        }
+    }
+}
 
 
 //new game button
@@ -133,7 +121,6 @@ function newGame(){
     aiRoundScore.innerHTML = 0;
 }
 
-
 //jquery accordion
 const $tabs = $('.tab');
 const $howTo = $('.how-to');
@@ -144,7 +131,3 @@ $tabs.click(function(){
     $(this).next().slideToggle();
 });
 
-//1 rolled, score is 0
-
-
-//total score from each round(3 max)

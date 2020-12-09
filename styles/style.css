@@ -89,7 +89,7 @@ class selectors
   grid-template-rows: minmax(200px, auto);
   grid-gap: 2px;
   grid-area: content;
-  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "userscore aiscore" "usertotal aitotal";
+  grid-template-areas: "box1 box2" "box1 box2" "roll roll" "userscore aiscore" "usertotal aitotal" "win win";
 }
 
 .rules {
@@ -127,6 +127,11 @@ class selectors
 
 .aitotal {
   grid-area: aitotal;
+  text-align: center;
+}
+
+.win-message {
+  grid-area: win;
   text-align: center;
 }
 

@@ -119,6 +119,7 @@ class selectors
   "roll roll"
   "userscore aiscore"
   "usertotal aitotal"
+  "win win"
   ;
 }
 
@@ -161,6 +162,11 @@ text-align: center;
   text-align: center;
   }
   
+.win-message {
+  grid-area: win;
+  text-align: center;
+}
+
 
 .footer {
 grid-area: footer;
